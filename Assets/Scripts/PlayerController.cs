@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("m") && keyIsDown == true)
         {
-            Destroy(gameObject);
+            DestroyImmediate(map, true);
             keyIsDown = false;
         }
     }
