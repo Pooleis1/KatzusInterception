@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45325038-4c18-4a34-8b3d-7fdb3ac4387a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs.meta" afterDir="false" />
+    <list default="true" id="45325038-4c18-4a34-8b3d-7fdb3ac4387a" name="Changes" comment="Leon's Player Controller (Movement, Jump und Double Jump)">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KatzusInterception.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/KatzusInterception.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,7 @@
       <workItem from="1650616493256" duration="9000" />
       <workItem from="1650617637131" duration="4725000" />
       <workItem from="1650885168892" duration="2514000" />
-      <workItem from="1651566491921" duration="2922000" />
+      <workItem from="1651566491921" duration="6508000" />
     </task>
     <task id="LOCAL-00001" summary="Gamemechanik begonnen">
       <created>1650820806059</created>
@@ -96,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650897886810</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Leon's Player Controller (Movement, Jump und Double Jump)">
+      <created>1651570999934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651570999934</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +121,7 @@
     <MESSAGE value="Gamemechanik begonnen" />
     <MESSAGE value="Player added" />
     <MESSAGE value="Updatet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updatet" />
+    <MESSAGE value="Leon's Player Controller (Movement, Jump und Double Jump)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leon's Player Controller (Movement, Jump und Double Jump)" />
   </component>
 </project>

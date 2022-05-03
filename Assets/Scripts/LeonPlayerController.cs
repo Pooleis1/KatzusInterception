@@ -12,6 +12,7 @@ public class LeonPlayerController : MonoBehaviour
     [SerializeField] private float jump = 5;
     private float jumpCooldown = 0;
     private bool doubleJump = true;
+    private bool facingRight = true;
 
 
     private void Awake() {
@@ -41,6 +42,15 @@ public class LeonPlayerController : MonoBehaviour
         {
             doubleJump = true;
         }
+
+        if (Input.GetAxis("Horizontal") > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (Input.GetAxis("Horizontal") < 0 && facingRight)
+        {
+            Flip();
+        }
     }
 
     void Jump()
@@ -50,7 +60,7 @@ public class LeonPlayerController : MonoBehaviour
         }
         else if (OnWall() && !IsGrounded()) {
             jumpCooldown = 0;
-            rigidBody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * speed / 2, jump * 2);
+            rigidBody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * speed, jump * 2);
         }
     }
 
@@ -72,6 +82,16 @@ public class LeonPlayerController : MonoBehaviour
     public bool OnWall() {
         RaycastHit2D raycastHit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0, new Vector2(transform.localScale.x,0), 0.1f, wallLayer);
         return raycastHit.collider != null;
+    }
+    
+    protected void Flip()    
+    {
+        facingRight = !facingRight;
+  
+        Vector3 spriteScale = transform.localScale;
+        spriteScale.x *= -1;
+        transform.localScale = spriteScale;
+        
     }
 
 
