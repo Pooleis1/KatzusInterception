@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 713329372}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,8 +624,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.8760536, y: -0.4380249}
-  m_Size: {x: 13.070109, y: 18.618532}
+  m_Offset: {x: -1.0520567, y: 0.2073198}
+  m_Size: {x: 12.718094, y: 17.327839}
   m_Direction: 0
 --- !u!114 &713329371
 MonoBehaviour:
@@ -634,12 +634,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713329366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9da7232e9dbb7a4ebec2c9125add9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  moveSpeed: 7
   jumpForce: 4
   map: {fileID: 0}
 --- !u!114 &713329372
@@ -649,14 +649,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713329366}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4486bf872d243028ab52b3e9521d11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -921,7 +921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499109337}
   - component: {fileID: 1499109336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
