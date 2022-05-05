@@ -20,7 +20,8 @@ public class LeonPlayerController : MonoBehaviour
         collider = GetComponent<CapsuleCollider2D>();
     }
 
-    void Update() {
+    void Update()
+    {
         if (jumpCooldown > 0.2f) {
             rigidBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rigidBody.velocity.y);
             if (OnWall() && !IsGrounded()) {
@@ -66,7 +67,23 @@ public class LeonPlayerController : MonoBehaviour
 
     private bool IsGrounded() {
         RaycastHit2D raycastHit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        print(raycastHit.collider);
         return raycastHit.collider != null;
+
+
+        /*
+        Vector2 position = rigidBody.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+    
+        Debug.DrawRay(position, direction, Color.green);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null) {
+            return true;
+        }
+
+        return false;
+        */
     }
 
     public bool CanDoubleJump()
