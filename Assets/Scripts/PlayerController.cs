@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         transform.velocity = new Vector2(h * movementSpeed, transform.velocity.y);
 
 
-        if (isGrounded())
+        if (IsGrounded())
         {
             float v = Input.GetAxis("Vertical");
             transform.velocity = new Vector2(transform.velocity.x, v*jumpForce);
