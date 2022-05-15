@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,20 +6,23 @@ public class PlayerController : MonoBehaviour
 {
     
     //Alle Public Attribute werden automatisch Seralizied
-    public float moveSpeed = 3f;
+    public float movementSpeed = 7f;
     //Mit dem SerializeField kann man auch private Attribute Seralizied
     [SerializeField] private float jumpForce = 4f;
     
-    private Rigidbody2D rb;
+    private Rigidbody2D transform;
+
+
+    private CapsuleCollider2D collider;
+    [SerializeField] private LayerMask groundLayer;
     
 
     public GameObject map;
     private bool keyIsDown;
-
-    private bool canDoubleJump = true;
-    private CapsuleCollider2D collider;
-
-    private LayerMask platformLayer = 8;
+    
+    
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +30,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Starten");
         keyIsDown = false;
 
-        //Wir nehmen ein Component von unserm Game und dieses Gameobject wird zu einem Rigidbody formatiert
-        rb = gameObject.GetComponent<Rigidbody2D>();
-
-        collider = gameObject.GetComponent<CapsuleCollider2D>();
+        transform = GetComponent<Rigidbody2D>();
+        collider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -39,32 +39,27 @@ public class PlayerController : MonoBehaviour
     {
         //GetAxis gibt einen wert von -1,0,1 zurück bei drücken von den a,nichts,d
         float h = Input.GetAxis("Horizontal");
- 
+        
         //bewegt den Spieler um die X Achse vorwärts. -1*movespeed,0,1*movespeed
-        rb.velocity = new Vector2(h * moveSpeed, rb.velocity.y);
+        transform.velocity = new Vector2(h * movementSpeed, transform.velocity.y);
 
-
-        /*if (IsGrounded())
-        {
-            canDoubleJump = true;
-        }*/
 
         if (IsGrounded())
         {
             float v = Input.GetAxis("Vertical");
-            rb.velocity = new Vector2(rb.velocity.x, v*jumpForce);
-        } /*else
+            transform.velocity = new Vector2(transform.velocity.x, v*jumpForce);
+            // isGrounded = false;
+        }
+
+
+        /**if ()
         {
-            if (canDoubleJump)
-            {
-                float v = Input.GetAxis("Vertical");
-                rb.velocity = new Vector2(rb.velocity.x, v*jumpForce);
-                canDoubleJump = false;
-            }
+            isGrounded = true;
         }*/
+        
 
-
-
+        
+        
         /*if (Input.GetKeyDown("m")&&keyIsDown==false)
         {
             Instantiate(map,new Vector3(0,0,0), Quaternion.identity);
@@ -81,11 +76,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    /**
+     * Schaut ob er in der Luft ist oder nicht
+     * @return Ob er sich Am Boden befindet oder nicht
+     */
     private bool IsGrounded()
     {
-
-        RaycastHit2D raycastHit = Physics2D.CapsuleCast(collider.bounds.center, collider.bounds.size, 0,0f, Vector2.down, 0.1f,platformLayer);
-        Debug.Log(raycastHit.collider);
+        //Sagt das er nur !null ist wenn er den spezifischen groundLayer unten berührt
+        RaycastHit2D raycastHit = Physics2D.CapsuleCast(collider.bounds.center, collider.bounds.size,0, 0, Vector2.down, 0.1f, groundLayer);
+        print(raycastHit.collider);
+        //gibt null zurück der Collider nicht den ground berührt
         return raycastHit.collider != null;
     }
+
 }

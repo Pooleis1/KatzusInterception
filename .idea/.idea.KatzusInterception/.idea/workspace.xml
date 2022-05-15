@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45325038-4c18-4a34-8b3d-7fdb3ac4387a" name="Changes" comment="Leon's Player Controller (Movement, Jump und Double Jump)">
+    <list default="true" id="45325038-4c18-4a34-8b3d-7fdb3ac4387a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/shelf/Uncommitted_changes_before_Update_at_12_05_2022_08_31_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/shelf/Uncommitted_changes_before_Update_at_12_05_2022_08_31__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Item_Sword.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Item_Sword.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemObject.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KatzusInterception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeonPlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KatzusInterception.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/KatzusInterception.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/leon0/RiderProjects/KatzusInterception/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/2D Platformer/Assets/Player.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -18,7 +33,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2896UJDyA4QMPkG3p5LPGOtSTIG" />
   <component name="ProjectViewState">
@@ -26,11 +41,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -67,6 +84,11 @@
       <workItem from="1650617637131" duration="4725000" />
       <workItem from="1650885168892" duration="2514000" />
       <workItem from="1651566491921" duration="6508000" />
+      <workItem from="1651653618900" duration="5227000" />
+      <workItem from="1651748593436" duration="759000" />
+      <workItem from="1651823397192" duration="4686000" />
+      <workItem from="1652337106989" duration="1367000" />
+      <workItem from="1652429152790" duration="3875000" />
     </task>
     <task id="LOCAL-00001" summary="Gamemechanik begonnen">
       <created>1650820806059</created>
@@ -96,7 +118,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651570999934</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PlayerController überarbeitet">
+      <created>1651748966034</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651748966034</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Workspace aktualisiert">
+      <created>1651749020707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651749020707</updated>
+    </task>
+    <task id="LOCAL-00007" summary="PlayerController improved">
+      <created>1651828487911</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651828487911</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +165,9 @@
     <MESSAGE value="Player added" />
     <MESSAGE value="Updatet" />
     <MESSAGE value="Leon's Player Controller (Movement, Jump und Double Jump)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leon's Player Controller (Movement, Jump und Double Jump)" />
+    <MESSAGE value="PlayerController überarbeitet" />
+    <MESSAGE value="Workspace aktualisiert" />
+    <MESSAGE value="PlayerController improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerController improved" />
   </component>
 </project>
