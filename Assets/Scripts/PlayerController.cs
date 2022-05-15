@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,28 +6,21 @@ public class PlayerController : MonoBehaviour
     //Alle Public Attribute werden automatisch Seralizied
     public float movementSpeed = 7f;
     //Mit dem SerializeField kann man auch private Attribute Seralizied
-    [SerializeField] private float jumpForce = 4f;
+    [SerializeField] private float jumpForce = 3f;
     
     private Rigidbody2D transform;
-
-
+    
     private CapsuleCollider2D collider;
     [SerializeField] private LayerMask groundLayer;
+
+    private bool doubleJump = true;
     
 
-    public GameObject map;
-    private bool keyIsDown;
-    
-    
-    
-    
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Starten");
-        keyIsDown = false;
-
         transform = GetComponent<Rigidbody2D>();
         collider = GetComponent<CapsuleCollider2D>();
     }
@@ -43,36 +34,47 @@ public class PlayerController : MonoBehaviour
         //bewegt den Spieler um die X Achse vorwärts. -1*movespeed,0,1*movespeed
         transform.velocity = new Vector2(h * movementSpeed, transform.velocity.y);
 
+        if (Input.GetKeyDown("w")) // w drücken
+        {
+            Jump();
+        }
+        
+        // Wenn der Spieler den Boden berührt, wird seine Double-Jump Funktion wieder "aufgeladen"
+        if (IsGrounded() && doubleJump == false)
+        {
+            doubleJump = true;
+        }
 
+
+    }
+
+    /**
+     * Lässt den Spieler Jumpen
+     * Double Jumpen
+     * normal Jumpen
+     * Wall Jumps
+     */
+    private void Jump()
+    {
+        // Wenn der Spieler am Boden ist/Double Jumpen kann
         if (IsGrounded())
         {
-            float v = Input.GetAxis("Vertical");
-            transform.velocity = new Vector2(transform.velocity.x, v*jumpForce);
-            // isGrounded = false;
+            transform.velocity += new Vector2(0, jumpForce); //fügt y jumpForce hinzu
         }
-
-
-        /**if ()
+        
+        if (CanDoubleJump())
         {
-            isGrounded = true;
-        }*/
-        
-
-        
-        
-        /*if (Input.GetKeyDown("m")&&keyIsDown==false)
-        {
-            Instantiate(map,new Vector3(0,0,0), Quaternion.identity);
-
-            keyIsDown = true;
+            transform.velocity += new Vector2(0, jumpForce);
         }
-
-        if (Input.GetKeyDown("m") && keyIsDown == true)
+            //Wenn der Spieler an einer Wand ist
+        /*else
         {
-            DestroyImmediate(map, true);
-            keyIsDown = false;
+            if()
+            {
+                
+            }
         }*/
-        
+
 
     }
 
@@ -83,10 +85,24 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         //Sagt das er nur !null ist wenn er den spezifischen groundLayer unten berührt
-        RaycastHit2D raycastHit = Physics2D.CapsuleCast(collider.bounds.center, collider.bounds.size,0, 0, Vector2.down, 0.1f, groundLayer);
+        RaycastHit2D raycastHit = Physics2D.CapsuleCast(collider.bounds.center, collider.bounds.size, CapsuleDirection2D.Vertical, 0, Vector2.down, 0.1f, groundLayer);
         print(raycastHit.collider);
         //gibt null zurück der Collider nicht den ground berührt
         return raycastHit.collider != null;
+    }
+    
+    /**
+     * Überprüft ob er doubleJumpen kann stellt es aber aus
+     * @return ob er doubleJumpen kann oder nicht
+     */
+    private bool CanDoubleJump()
+    {
+        if (doubleJump) {
+            doubleJump = false;
+            return true;
+        }
+
+        return false;
     }
 
 }

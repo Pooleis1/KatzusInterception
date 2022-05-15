@@ -662,14 +662,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713329366}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9da7232e9dbb7a4ebec2c9125add9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 7
-  jumpForce: 4
-  map: {fileID: 0}
+  jumpForce: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &713329372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +699,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713329366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
